@@ -10,4 +10,6 @@ public class side
         Type = type; 
         Quantity = quantity;
     }
+
+
 }
