@@ -14,6 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CreateAccount.unity
     guid: fe9578ed5b1198c4aa2fc55a0a35a765
+  - enabled: 1
+    path: Assets/Scenes/CheckOut.unity
+    guid: 35135e40967e4f3409b8353883d469ca
+  - enabled: 1
+    path: Assets/Scenes/logIn.unity
+    guid: e5a73a625c4728f43a109f9ac715b043
+  - enabled: 1
+    path: Assets/Scenes/Order.unity
+    guid: ae1234cb7f3739f44975a3be4b0ff3ac
+  - enabled: 1
+    path: Assets/Scenes/orderComplete.unity
+    guid: 7f534c49b88462747b61cb79e239c255
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
