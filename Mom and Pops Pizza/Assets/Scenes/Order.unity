@@ -10951,8 +10951,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -647.8, y: 63.4}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: -636.48, y: 63.4}
+  m_SizeDelta: {x: 182.64, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &670842261
 MonoBehaviour:
@@ -12098,7 +12098,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Drinks!\nPepsi:\t\t\tDiet Pepsi:\t\tOrange:\nDiet Orange:\t\tRoot Beer:\t\t\tDiet
     Root Beer:\t\t\tStarry:\t\t\tLemonade:\n\nSides!\nBreadsticks:\t\tBreadstick
-    Bites:\nBig Choclate Chip Cookie:"
+    Bites:\nBig Chocolate Chip Cookie:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -25735,7 +25735,7 @@ MonoBehaviour:
     - m_Text: Small
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Meduim
+    - m_Text: Medium
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
     - m_Text: Large
