@@ -1,0 +1,75 @@
+﻿using UnityEngine.UI;
+using UnityEngine;
+using System.IO;
+
+//class to handle logging in a user based off user-inputted login credentials
+public class attempt_login : MonoBehaviour
+{
+    public InputField username;
+    public InputField password;
+    public Text validity;
+    public string[,] credentials;
+    public string file;
+
+
+
+    void Start()
+    {
+        loadFile();
+    }
+
+
+    //loads the file containing username and password combinations
+    public void loadFile()
+    {
+        file = Application.persistentDataPath + "/credentials.txt";
+        string[] lines = File.ReadAllLines(file);
+        credentials = new string[lines.Length, 2];
+
+        for (int i = 0; i < credentials.GetLength(0); i++)
+        {
+            string[] parts = lines[i].Split(',');
+            credentials[i, 0] = parts[0].Trim();
+            credentials[i, 1] = parts[1].Trim();
+        }
+    }
+
+
+    //checks if the user inputted username and password combination exists in the text file
+    //returns true if the user inputted combination exists and is valid
+    //return false is the user inputted combination does not exist and is not associated with an account
+    public bool validateLogin(string username, string password)
+    {
+        for (int i = 0; i < credentials.GetLength(0); i++)
+        {
+            if (credentials[i, 0] == username && credentials[i, 1] == password)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+    //calls validateLogin and returns the respective message, either valid or not valid
+    public void AttemptLogin()
+    {
+        string inputted_user = username.text;
+        string inputted_pass = password.text;
+
+        bool valid = validateLogin(inputted_user, inputted_pass);
+
+        if (valid == true)
+        {
+            validity.text = "Login successful";
+        }
+        else
+        {
+            validity.text = "Invalid username or password";
+        }
+
+    }
+
+
+}
