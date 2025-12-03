@@ -3,10 +3,11 @@ using System.Collections.Generic;
 
 public class pizza
 {
-    private string Crust;
-    private string Size;
-    private List<string> Toppings;
-    private int Quantity;
+    public string Crust;
+    public string Size;
+    public List<string> Toppings;
+    public int Quantity;
+
 
     public pizza(string crust, string size, List<string> toppings, int quantity)
     {
@@ -14,6 +15,7 @@ public class pizza
         Size = size;
         Toppings = toppings;
         Quantity = quantity;
+  
     }
 
     public void selectCrust(int index)
@@ -57,7 +59,7 @@ public class pizza
         if (index == 1)
         {
             if (!this.Toppings.Contains("Cheese"))
-                {
+            {
                 Toppings.Add("Cheese");
             }
             else if (this.Toppings.Contains("Cheese"))
@@ -159,3 +161,4 @@ public class pizza
         this.Quantity = quantity;
     }
 }
+

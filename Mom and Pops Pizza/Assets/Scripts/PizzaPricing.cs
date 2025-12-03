@@ -96,7 +96,7 @@ public static class PizzaPricing
     /// </summary>
     /// <param name="pizzas"></param> takes in a pizza object from the Pizza class
     /// <returns></returns> returns the total price of all the pizzas added to an order
-    public static double TotalPizzasPrice(Pizza pizzas)
+    public static double TotalPizzasPrice(pizza pizzas)
     {
         double size_price = SizePrice(pizzas.Size);
         double toppings_price = ToppingsPrice(pizzas.Toppings, pizzas.Size);
