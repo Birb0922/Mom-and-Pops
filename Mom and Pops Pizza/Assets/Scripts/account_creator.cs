@@ -27,7 +27,7 @@ public class account_creation : MonoBehaviour
         string inputted_password = password.text;
 
         if (string.IsNullOrEmpty(inputted_username) || string.IsNullOrEmpty(inputted_password))
-        {
+        {   
             output.text = "Invalid Username or Password";
             return;
         }

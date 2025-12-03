@@ -70,12 +70,12 @@ public class OrderUILink : MonoBehaviour
         if (pineapple.isOn) { toppings.Add("Pineapple"); }
 
 		pizza pizza_object = new pizza(pizza_crust, pizza_object_size, toppings, pizza_object_quantity);
-		orderConfigurator.AddPizzaToOrder(pizza_object);
+		orderConfigurator.addPizzaToOrder(pizza_object);
 
         AddSoda(pepsi_drink_size, pepsi_drink_quantity, "Pepsi");
         AddSoda(diet_pepsi_drink_size, diet_pepsi_drink_quantity, "Diet Pepsi");
         AddSoda(orange_drink_size, orange_drink_quantity, "Orange");
-        AddSoda(diet_orange_drink_size, diet_orange_drink_quantity, "Diet Orange");
+        AddSoda(diet_orange_drink_size, diet_orangedrink_quantity, "Diet Orange");
         AddSoda(rootbeer_drink_size, rootbeer_drink_quantity, "Root Beer");
         AddSoda(diet_rootbeer_drink_size, diet_rootbeer_drink_quantity, "Diet Root Beer");
         AddSoda(starry_drink_size, starry_drink_quantity, "Starry");

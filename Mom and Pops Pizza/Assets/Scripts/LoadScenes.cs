@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class sceneChanger : MonoBehaviour
 {
+    public void loadCompletedScene()
+    {
+        SceneManager.LoadScene("orderComplete");
+    }
     public void loadCreateAccountScene()
     {
         SceneManager.LoadScene("CreateAccount");
@@ -20,6 +24,11 @@ public class sceneChanger : MonoBehaviour
     public void loadLoginScene()
     {
         SceneManager.LoadScene("logIn");
+    }
+
+    public void loadCheckOutScene()
+    {
+        SceneManager.LoadScene("CheckOut");
     }
 
 }
