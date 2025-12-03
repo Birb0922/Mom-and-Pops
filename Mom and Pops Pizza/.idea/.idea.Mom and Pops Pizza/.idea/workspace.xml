@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9aedbd75-d1b1-48b1-869f-628187ead49a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/account_creatorDaniel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/account_creatorDaniel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/accounts.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/accounts.txt.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mom and Pops Pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mom and Pops Pizza/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreateAccount.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreateAccount.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/account_creator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/account_creator.cs" afterDir="false" />
-    </list>
+    <list default="true" id="9aedbd75-d1b1-48b1-869f-628187ead49a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +14,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoadScenes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/account_creator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/account_creatorDaniel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/cartItemUi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/orderMaker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/simpleLogin.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -31,17 +29,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.2.12f1\Editor\Unity.exe" />
@@ -91,6 +89,7 @@
       <workItem from="1764620698605" duration="194000" />
       <workItem from="1764621520114" duration="48000" />
       <workItem from="1764737417399" duration="2896000" />
+      <workItem from="1764741459566" duration="11941000" />
     </task>
     <servers />
   </component>
