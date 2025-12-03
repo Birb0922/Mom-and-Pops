@@ -8,4 +8,18 @@ public class sceneChanger : MonoBehaviour
         SceneManager.LoadScene("CreateAccount");
     }
 
+    public void loadOrderScene()
+    {
+        SceneManager.LoadScene("Order");
+    }
+    public void loadMainMenuScene()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void loadLoginScene()
+    {
+        SceneManager.LoadScene("logIn");
+    }
+
 }
