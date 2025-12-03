@@ -6,22 +6,22 @@ public class OrderUILink : MonoBehaviour
 {
     public OrderConfigurator orderConfigurator;
 
-    public Dropdown crust;
-    public Dropdown pizza_size;
-    public InputField pizza_quantity;
+	public Dropdown crust;
+	public Dropdown pizza_size;
+	public InputField pizza_quantity;
 
-    public Toggle pepperoni;
-    public Toggle cheese;
-    public Toggle sausage;
-    public Toggle ham;
-    public Toggle green_pepper;
-    public Toggle onion;
-    public Toggle tomato;
-    public Toggle mushroom;
-    public Toggle pineapple;
+	public Toggle pepperoni;
+	public Toggle cheese;
+	public Toggle sausage;
+	public Toggle ham;
+	public Toggle green_pepper;
+	public Toggle onion;
+	public Toggle tomato;
+	public Toggle mushroom;
+	public Toggle pineapple;
 
-    public Dropdown pepsi_drink_size;
-    public Dropdown pepsi_drink_quantity;
+	public Dropdown pepsi_drink_size;
+	public Dropdown pepsi_drink_quantity;
 
     public Dropdown diet_pepsi_drink_size;
     public Dropdown diet_pepsi_drink_quantity;
@@ -38,35 +38,39 @@ public class OrderUILink : MonoBehaviour
     public Dropdown diet_rootbeer_drink_size;
     public Dropdown diet_rootbeer_drink_quantity;
 
-    public Dropdown starry_drink_size;
-    public Dropdown starry_drink_quantity;
+	public Dropdown starry_drink_size;
+	public Dropdown starry_drink_quantity;
 
-    public Dropdown lemonade_drink_size;
-    public Dropdown lemonade_drink_quantity;
+	public Dropdown lemonade_drink_size;
+	public Dropdown lemonade_drink_quantity;
 
     public Dropdown breadstick_quantity;
-    public Dropdown breadstick_bites_quantity;
-    public Dropdown cookie_quantity;
+	public Dropdown breadstick_bites_quantity;
+	public Dropdown cookie_quantity;
 
-    public void addOrder()
-    {
-        string pizza_crust = crust.options[crust.value].text;
-        string pizza_object_size = pizza_size.options[pizza_size.value].text;
+
+
+	public void addOrder()
+	{
+		string pizza_crust = crust.options[crust.value].text;
+		string pizza_object_size = pizza_size.options[pizza_size.value].text;
         int pizza_object_quantity = int.Parse(pizza_quantity.text);
 
-        List<string> toppings = new List<string>();
-        if (pepperoni.isOn) toppings.Add("Pepperoni");
-        if (cheese.isOn) toppings.Add("Cheese");
-        if (sausage.isOn) toppings.Add("Sausage");
-        if (ham.isOn) toppings.Add("Ham");
-        if (green_pepper.isOn) toppings.Add("Green Pepper");
-        if (onion.isOn) toppings.Add("Onion");
-        if (tomato.isOn) toppings.Add("Tomato");
-        if (mushroom.isOn) toppings.Add("Mushroom");
-        if (pineapple.isOn) toppings.Add("Pineapple");
+        
+		List<string> toppings = new List<string>();
 
-        pizza pizza_object = new pizza(pizza_crust, pizza_object_size, toppings, pizza_object_quantity);
-        orderConfigurator.addPizzaToOrder(pizza_object);
+		if (pepperoni.isOn) { toppings.Add("Pepperoni"); }
+        if (cheese.isOn) { toppings.Add("Cheese"); }
+        if (sausage.isOn) { toppings.Add("Sausage"); }
+        if (ham.isOn) { toppings.Add("Ham"); }
+        if (green_pepper.isOn) { toppings.Add("Green Pepper"); }
+        if (onion.isOn) { toppings.Add("Onion"); }
+        if (tomato.isOn) { toppings.Add("Tomato"); }
+        if (mushroom.isOn) { toppings.Add("Mushroom"); }
+        if (pineapple.isOn) { toppings.Add("Pineapple"); }
+
+		pizza pizza_object = new pizza(pizza_crust, pizza_object_size, toppings, pizza_object_quantity);
+		orderConfigurator.addPizzaToOrder(pizza_object);
 
         AddSoda(pepsi_drink_size, pepsi_drink_quantity, "Pepsi");
         AddSoda(diet_pepsi_drink_size, diet_pepsi_drink_quantity, "Diet Pepsi");
@@ -80,7 +84,9 @@ public class OrderUILink : MonoBehaviour
         AddSide(breadstick_quantity, "Breadsticks");
         AddSide(breadstick_bites_quantity, "Breadstick Bites");
         AddSide(cookie_quantity, "Big Chocolate Chip Cookie");
+
     }
+
 
     private void AddSoda(Dropdown drink_size, Dropdown drink_quantity, string drink_type)
     {
@@ -102,4 +108,7 @@ public class OrderUILink : MonoBehaviour
             orderConfigurator.addSideToOrder(side_object);
         }
     }
+
+
+
 }

@@ -7,15 +7,16 @@ public class OrderManager : MonoBehaviour
 {
     public class CartItem
     {
-        public string Name;
-        public float Price;
+        public string Name;      
+        public float Price;        
         public int Quantity;
-        public string Details;
+        public string Details;    
     }
 
     public TMP_Dropdown crustDropdown;
     public TMP_Dropdown sizeDropdown;
-    public TMP_Dropdown pizzaQuantityDropdown;
+    public TMP_Dropdown pizzaQuantityDropdown; 
+
 
     public Toggle pepperoniToggle;
     public Toggle cheeseToggle;
@@ -27,6 +28,7 @@ public class OrderManager : MonoBehaviour
     public Toggle mushroomToggle;
     public Toggle pineappleToggle;
 
+
     public TMP_Dropdown pepsiSizeDropdown; public TMP_Dropdown pepsiQuantityDropdown;
     public TMP_Dropdown dietPepsiSizeDropdown; public TMP_Dropdown dietPepsiQuantityDropdown;
     public TMP_Dropdown rootBeerSizeDropdown; public TMP_Dropdown rootBeerQuantityDropdown;
@@ -36,58 +38,69 @@ public class OrderManager : MonoBehaviour
     public TMP_Dropdown dietOrangeSizeDropdown; public TMP_Dropdown dietOrangeQuantityDropdown;
     public TMP_Dropdown orangeSizeDropdown; public TMP_Dropdown orangeQuantityDropdown;
 
+
     public TMP_Dropdown breadsticksQuantityDropdown;
     public TMP_Dropdown breadstickBitesQuantityDropdown;
     public TMP_Dropdown bigCookieQuantityDropdown;
 
-    public Button addButton;
-    public Button viewCartButton;
-    public GameObject checkoutPanel;
+   
+    public Button addButton;             
+    public Button viewCartButton;        
+    public GameObject checkoutPanel;     
 
-    public TMP_Text itemizedListText;
-    public TMP_Text finalTotalText;
 
+    public TMP_Text itemizedListText;    
+    public TMP_Text finalTotalText;      
+    
+ 
     public List<CartItem> shoppingCart = new List<CartItem>();
 
     void Start()
     {
+
         addButton.onClick.AddListener(ProcessAndDisplayOrder);
         viewCartButton.onClick.AddListener(ToggleCheckoutPanel);
-
+        
+  
+        
         if (checkoutPanel != null)
         {
             checkoutPanel.SetActive(false);
         }
-        ProcessAndDisplayOrder();
+        ProcessAndDisplayOrder(); 
     }
+
+ 
 
     public void ProcessAndDisplayOrder()
     {
-        shoppingCart.Clear();
-        OrderConfigurator.currentOrder.pizzas.Clear();
-        OrderConfigurator.currentOrder.sodas.Clear();
-        OrderConfigurator.currentOrder.sides.Clear();
-
+ 
+        shoppingCart.Clear(); 
+        
         ProcessPizzaOrder();
         ProcessDrinkOrders();
         ProcessSideOrders();
 
         UpdateCartDisplay();
     }
+    
 
+    
     public void ToggleCheckoutPanel()
     {
         if (checkoutPanel != null)
         {
             bool newState = !checkoutPanel.activeSelf;
             checkoutPanel.SetActive(newState);
-
+            
             if (newState)
             {
-                UpdateCartDisplay();
+                UpdateCartDisplay(); 
             }
         }
     }
+    
+
 
     public void UpdateCartDisplay()
     {
@@ -96,16 +109,21 @@ public class OrderManager : MonoBehaviour
         foreach (CartItem item in shoppingCart)
         {
             float lineTotal = item.Price * item.Quantity;
+            
+         
             string displayName = item.Name;
             if (!string.IsNullOrEmpty(item.Details))
             {
                 displayName += $" ({item.Details})";
             }
+         
             string itemLine = $"{item.Quantity}x {displayName} @ ${item.Price:F2} ea. = ${lineTotal:F2}\n";
+            
             itemListString += itemLine;
             totalOrderPrice += lineTotal;
         }
 
+ 
         if (itemizedListText != null)
         {
             if (shoppingCart.Count == 0)
@@ -114,9 +132,10 @@ public class OrderManager : MonoBehaviour
             }
             else
             {
-                itemizedListText.text = itemListString;
+                itemizedListText.text = itemListString; 
             }
         }
+
 
         if (finalTotalText != null)
         {
@@ -124,14 +143,13 @@ public class OrderManager : MonoBehaviour
         }
     }
 
+
     private void ProcessPizzaOrder()
     {
         int pizzaQuantity = GetDropdownValue(pizzaQuantityDropdown);
-        if (pizzaQuantity <= 0) return;
+        if (pizzaQuantity <= 0) return; 
 
         string selectedSize = sizeDropdown.options[sizeDropdown.value].text;
-        string selectedCrust = crustDropdown.options[crustDropdown.value].text;
-
         List<string> selectedToppings = new List<string>();
         if (pepperoniToggle.isOn) selectedToppings.Add("Pepperoni");
         if (cheeseToggle.isOn) selectedToppings.Add("Cheese");
@@ -148,6 +166,7 @@ public class OrderManager : MonoBehaviour
         float totalToppingsPrice = selectedToppings.Count * toppingPricePerUnit;
         float unitPrice = basePrice + totalToppingsPrice;
 
+        string selectedCrust = crustDropdown.options[crustDropdown.value].text;
         string toppingsList = selectedToppings.Count > 0 ? string.Join(", ", selectedToppings) : "None";
 
         CartItem newPizza = new CartItem
@@ -158,15 +177,12 @@ public class OrderManager : MonoBehaviour
             Details = $"{selectedSize}, {selectedCrust} Crust, Toppings: {toppingsList}"
         };
         shoppingCart.Add(newPizza);
-
-        pizza newPizzaObj = new pizza(selectedCrust, selectedSize, selectedToppings, pizzaQuantity);
-        OrderConfigurator.currentOrder.addPizzaToOrder(newPizzaObj);
     }
-
+    
     private void ProcessDrinkOrders()
     {
-        const float drinkPrice = 1.75f;
-
+        const float drinkPrice = 1.75f; 
+        
         AddDrinkItem("Pepsi", pepsiSizeDropdown, pepsiQuantityDropdown, drinkPrice);
         AddDrinkItem("Diet Pepsi", dietPepsiSizeDropdown, dietPepsiQuantityDropdown, drinkPrice);
         AddDrinkItem("Root Beer", rootBeerSizeDropdown, rootBeerQuantityDropdown, drinkPrice);
@@ -176,7 +192,7 @@ public class OrderManager : MonoBehaviour
         AddDrinkItem("Diet Orange", dietOrangeSizeDropdown, dietOrangeQuantityDropdown, drinkPrice);
         AddDrinkItem("Orange", orangeSizeDropdown, orangeQuantityDropdown, drinkPrice);
     }
-
+    
     private void ProcessSideOrders()
     {
         AddSideItem("Breadsticks", breadsticksQuantityDropdown, 4.00f);
@@ -196,7 +212,7 @@ public class OrderManager : MonoBehaviour
         int.TryParse(selectedText, out quantity);
         return quantity;
     }
-
+    
     private string GetDropdownText(TMP_Dropdown dropdown)
     {
         if (dropdown == null || dropdown.options.Count == 0) return string.Empty;
@@ -208,7 +224,7 @@ public class OrderManager : MonoBehaviour
         int quantity = GetDropdownValue(quantityDropdown);
         if (quantity > 0)
         {
-            string selectedSize = GetDropdownText(sizeDropdown);
+            string selectedSize = GetDropdownText(sizeDropdown); 
             CartItem newItem = new CartItem
             {
                 Name = name,
@@ -217,9 +233,6 @@ public class OrderManager : MonoBehaviour
                 Details = string.IsNullOrEmpty(selectedSize) ? "" : $"{selectedSize} Size"
             };
             shoppingCart.Add(newItem);
-
-            soda newSodaObj = new soda(name, selectedSize, quantity);
-            OrderConfigurator.currentOrder.addSodaToOrder(newSodaObj);
         }
     }
 
@@ -228,7 +241,7 @@ public class OrderManager : MonoBehaviour
         int quantity = GetDropdownValue(quantityDropdown);
         if (quantity > 0)
         {
-            CartItem newItem = new CartItem
+             CartItem newItem = new CartItem
             {
                 Name = name,
                 Price = unitPrice,
@@ -236,13 +249,12 @@ public class OrderManager : MonoBehaviour
                 Details = ""
             };
             shoppingCart.Add(newItem);
-
-            side newSideObj = new side(name, quantity);
-            OrderConfigurator.currentOrder.addSideToOrder(newSideObj);
         }
     }
 
-    private float GetPizzaBasePrice(string size)
+
+
+    private float GetPizzaBasePrice(string size) 
     {
         if (size == "Small") return 5.00f;
         if (size == "Medium") return 7.00f;
@@ -250,7 +262,7 @@ public class OrderManager : MonoBehaviour
         if (size == "Extra-Large") return 11.00f;
         return 0f;
     }
-
+    
     private float GetToppingPrice(string size)
     {
         if (size == "Small") return 0.75f;

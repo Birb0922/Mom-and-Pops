@@ -1,20 +1,11 @@
 ﻿using System.Collections.Generic;
 
-public static class SidePricing
+public class SidePricing
 {
-    public static double PriceForSide(side s)
+
+    public static double QuantityPrice(int quantity)
     {
-        switch (s.Type)
-        {
-            case "Breadsticks":
-                return 4.00 * s.Quantity;
-            case "Breadstick Bites":
-                return 2.00 * s.Quantity;
-            case "Big Chocolate Chip Cookie":
-                return 4.00 * s.Quantity;
-            default:
-                return 0;
-        }
+        return quantity * 1.75;
     }
 
     public static double TotalPrice(List<side> sides)
@@ -23,9 +14,11 @@ public static class SidePricing
 
         for (int i = 0; i < sides.Count; i++)
         {
-            total += PriceForSide(sides[i]);
+            total += QuantityPrice(sides[i].Quantity);
         }
 
         return total;
     }
+
+
 }
