@@ -67,7 +67,9 @@ public class OrderManager : MonoBehaviour
         {
             checkoutPanel.SetActive(false);
         }
-        ProcessAndDisplayOrder(); 
+        
+        // Initial call to display the empty cart message
+        UpdateCartDisplay(); 
     }
 
  
@@ -75,12 +77,14 @@ public class OrderManager : MonoBehaviour
     public void ProcessAndDisplayOrder()
     {
  
-        shoppingCart.Clear(); 
+        // 🚨 REMOVED: shoppingCart.Clear(); 
+        // This allows new items to be added to the existing list.
         
         ProcessPizzaOrder();
         ProcessDrinkOrders();
         ProcessSideOrders();
 
+        // This will update the display with the newly added items
         UpdateCartDisplay();
     }
     
