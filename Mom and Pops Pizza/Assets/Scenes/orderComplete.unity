@@ -695,6 +695,7 @@ GameObject:
   - component: {fileID: 1093358963}
   - component: {fileID: 1093358962}
   - component: {fileID: 1093358961}
+  - component: {fileID: 1093358964}
   m_Layer: 5
   m_Name: returnMenuButton
   m_TagString: Untagged
@@ -765,7 +766,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1093358962}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1093358964}
+        m_TargetAssemblyTypeName: sceneChanger, Assembly-CSharp
+        m_MethodName: loadMainMenuScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1093358962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -804,6 +817,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093358959}
   m_CullTransparentMesh: 1
+--- !u!114 &1093358964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093358959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5400b7542d6b3aa4e9f2b0ea6f8d3174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::sceneChanger
 --- !u!1 &1199795412
 GameObject:
   m_ObjectHideFlags: 0
